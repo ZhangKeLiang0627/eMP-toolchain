@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# eMP-t113-toolchain 一键解压脚本
+# eMP-toolchain 一键解压脚本
 #
 # 用法：
 #   ./setup.sh
@@ -9,7 +9,7 @@
 set -e
 cd "$(dirname "$0")"
 
-echo "=== eMP-t113-toolchain setup ==="
+echo "=== eMP-toolchain setup ==="
 
 if [ -d toolchain ] && [ -d sysroot ]; then
     echo "[skip] toolchain/ 与 sysroot/ 已存在，无需解压"

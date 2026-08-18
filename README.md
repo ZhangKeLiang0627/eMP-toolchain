@@ -1,4 +1,4 @@
-# eMP-t113-toolchain
+# eMP-toolchain
 
 Allwinner T113-S3 (TinaLinux) 交叉编译工具链，含编译器与 sysroot 依赖库，独立于完整 tina-sdk。
 
@@ -16,15 +16,15 @@ Allwinner T113-S3 (TinaLinux) 交叉编译工具链，含编译器与 sysroot �
 ## 快速开始
 
 ```bash
-git clone https://github.com/ZhangKeLiang0627/eMP-t113-toolchain
-cd eMP-t113-toolchain
+git clone https://github.com/ZhangKeLiang0627/eMP-toolchain
+cd eMP-toolchain
 ./setup.sh                     # 解压出 toolchain/ 与 sysroot/ 并打印环境变量
 ```
 
 然后按 setup.sh 输出设置环境变量（写进 `~/.bashrc` 更省事）：
 
 ```bash
-export T113_SDK="/path/to/eMP-t113-toolchain"
+export T113_SDK="/path/to/eMP-toolchain"
 export STAGING_DIR="$T113_SDK/sysroot"
 ```
 
@@ -34,7 +34,7 @@ export STAGING_DIR="$T113_SDK/sysroot"
 
 ```bash
 cd your-project
-export T113_SDK="/path/to/eMP-t113-toolchain"
+export T113_SDK="/path/to/eMP-toolchain"
 export STAGING_DIR="$T113_SDK/sysroot"
 make CROSS=1 -j32
 ```
@@ -46,7 +46,7 @@ make CROSS=1 -j32
 
 ```bash
 cd your-project
-export T113_SDK="/path/to/eMP-t113-toolchain"
+export T113_SDK="/path/to/eMP-toolchain"
 export STAGING_DIR="$T113_SDK/sysroot"
 mkdir -p build && cd build
 cmake -DCMAKE_TOOLCHAIN_FILE=cmake/build_for_t113s3.cmake -DT113_SDK=$T113_SDK ..
