@@ -10,6 +10,7 @@ Allwinner T113-S3 (TinaLinux) 交叉编译工具链，含编译器与 sysroot �
 |---|---|
 | `tc_toolchain.tar.gz` (46M) | `arm-openwrt-linux-muslgnueabi` GCC 6.4.1 交叉编译器（解压出 `toolchain/`） |
 | `tc_sysroot.tar.gz` (32M) | 板子头文件与库：`usr/include`（含 allwinner、freetype2）、`usr/lib`、`lib`（解压出 `sysroot/`） |
+| `cmake/build_for_t113s3.cmake` | **通用 T113-S3 工具链文件**，任何项目可直接引用，无需拷贝 |
 
 > 均 <100MB，满足 GitHub 单文件限制。解压后目录 ~230M。
 
@@ -49,11 +50,13 @@ cd your-project
 export T113_SDK="/path/to/eMP-toolchain"
 export STAGING_DIR="$T113_SDK/sysroot"
 mkdir -p build && cd build
-cmake -DCMAKE_TOOLCHAIN_FILE=cmake/build_for_t113s3.cmake -DT113_SDK=$T113_SDK ..
+# 直接用本仓库自带的工具链文件（推荐，免拷贝）
+cmake -DCMAKE_TOOLCHAIN_FILE=$T113_SDK/cmake/build_for_t113s3.cmake -DT113_SDK=$T113_SDK ..
 make -j32
 ```
 
 `build_for_t113s3.cmake` 路径解析优先级：`-DT113_SDK=` > 环境变量 `T113_SDK` > 本机 tina-sdk 默认绝对路径。
+任何 eMP 系列项目都能引用 `$T113_SDK/cmake/build_for_t113s3.cmake`，无需把该文件拷贝进项目。
 
 ## 说明
 
