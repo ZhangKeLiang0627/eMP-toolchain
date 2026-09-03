@@ -2,7 +2,7 @@
 
 Allwinner T113-S3 (TinaLinux) 交叉编译工具链，含编译器与 sysroot 依赖库，独立于完整 tina-sdk。
 
-从 `tina-sdk` 提取，供 eMP 系列项目（如 [eMP-tokenMonitor](https://github.com/ZhangKeLiang0627/eMP-tokenMonitor)）在**没有完整 SDK 的机器**上直接做 T113-S3 交叉编译。
+从 `tina-sdk` 提取，供 eMP 系列项目（如 [easyMediaPlayer](https://github.com/ZhangKeLiang0627/EasyMediaPlayer)）在**没有完整 SDK 的机器**上直接做 T113-S3 交叉编译。
 
 ## 内容
 
